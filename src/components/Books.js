@@ -2,11 +2,11 @@ import React from 'react';
 import BookList from './BookList';
 import AddBook from './AddBook';
 
-const Books = () => {
+const Books = () => (
   <div>
     <BookList />
     <AddBook />
-  </div>;
-};
+  </div>
+);
 
 export default Books;
