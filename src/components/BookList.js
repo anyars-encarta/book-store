@@ -25,14 +25,12 @@ const books = [
   },
 ];
 
-function BookList() {
-  return (
-    <>
-      {books.map((book) => (
-        <Book key={book.itemId} />
-      ))}
-    </>
-  );
-}
+const BookList = () => (
+  <>
+    {books.map((book) => (
+      <Book key={book.itemId} />
+    ))}
+  </>
+);
 
 export default BookList;
