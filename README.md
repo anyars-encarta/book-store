@@ -20,7 +20,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-- [🚀 Live Demo](#live-demo)
+<!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -70,11 +70,11 @@
 
 <!-- LIVE DEMO -->
 
-LIVE DEMO
+<!-- LIVE DEMO
 
 > Visit [live]( https://anyars-encarta.github.io/book-store/) page of my Profile
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- GETTING STARTED -->
 
@@ -141,7 +141,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add calculation features**
+- [ ] **Add Book Cataloguing features**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -176,7 +176,7 @@ Contributions, issues, and feature requests are welcome!
 
 - **What new features should be expected in the next release of the project?**
 
-  - I am currently working on adding **Calculation features**.
+  - I am currently working on adding **Book Cataloguing features**.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
