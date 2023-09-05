@@ -55,14 +55,14 @@ const AddBook = () => {
           onChange={handleInputChange}
         >
           <option value="" disabled>Category</option>
-          <option value="fiction">Comedy</option>
-          <option value="fiction">Drama</option>
+          <option value="comedy">Comedy</option>
+          <option value="drama">Drama</option>
           <option value="fiction">Fiction</option>
-          <option value="fiction">Melodrama</option>
+          <option value="melodrama">Melodrama</option>
           <option value="non-fiction">Non-Fiction</option>
-          <option value="fiction">Novella</option>
+          <option value="novella">Novella</option>
           <option value="sci-fi">SCI-FI</option>
-          <option value="fiction">Slapstick</option>
+          <option value="slapstick">Slapstick</option>
         </select>
 
         <button type="submit" onClick={handleAddBook}>ADD BOOK</button>

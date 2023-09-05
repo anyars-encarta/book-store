@@ -6,11 +6,14 @@ const Book = ({ book, onRemoveClick }) => {
     onRemoveClick(book.item_id);
   };
 
+  // Function to capitalize the first letter of a string
+  const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
   return (
     <div className="list-container">
       <ul className="list-block">
         <div className="left-section">
-          <li className="category">{book.category}</li>
+          <li className="category">{capitalizeFirstLetter(book.category)}</li>
           <li className="book-title">{book.title}</li>
           <li className="book-author">{book.author}</li>
 
