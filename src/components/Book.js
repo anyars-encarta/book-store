@@ -1,35 +1,58 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Book = () => (
-  <div className="list-container">
-    <ul className="list-block">
-      <div className="left-section">
-        <li className="category">Category</li>
-        <li className="book-title">Book Title</li>
-        <li className="book-author">Author</li>
+const Book = ({ book, onRemoveClick }) => {
+  const handleRemoveClick = () => {
+    onRemoveClick(book.item_id);
+  };
 
-        <nav className="list-actions">
-          <button type="button">Comments</button>
-          <button type="button">Remove</button>
-          <button type="button">Edit</button>
-        </nav>
-      </div>
+  return (
+    <div className="list-container">
+      <ul className="list-block">
+        <div className="left-section">
+          <li className="category">{book.category}</li>
+          <li className="book-title">{book.title}</li>
+          <li className="book-author">{book.author}</li>
 
-      <div className="right-section">
-        <div className="progess">
-          <span className="progress-indicator">Progress Indicator</span>
-          <span className="progress-percent">64%</span>
-          <span className="progress-completed">Completed</span>
+          <nav className="list-actions">
+            <button type="button">Comments</button>
+            <button type="button" onClick={handleRemoveClick}>Remove</button>
+            <button type="button">Edit</button>
+          </nav>
         </div>
 
-        <div className="chapter">
-          <h4 className="current-chapter">CURRENT CHAPTER</h4>
-          <h4 className="current-number">CURRENT 17</h4>
-          <button type="button" className="update-progress">UPDATE PROGRESS</button>
+        <div className="right-section">
+          <div className="progess">
+            <span className="progress-indicator">Progress Indicator</span>
+            <span className="progress-percent">
+              20%
+            </span>
+            <span className="progress-completed">Completed</span>
+          </div>
+
+          <div className="chapter">
+            <h4 className="current-chapter">CURRENT CHAPTER</h4>
+            <h4 className="current-number">
+              CHAPTER 4: UMUOFIA
+            </h4>
+            <button type="button" className="update-progress">UPDATE PROGRESS</button>
+          </div>
         </div>
-      </div>
-    </ul>
-  </div>
-);
+      </ul>
+    </div>
+  );
+};
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    // progress: PropTypes.string.isRequired,
+    // currentChapter: PropTypes.string.isRequired,
+    item_id: PropTypes.string.isRequired,
+  }).isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
+};
 
 export default Book;
