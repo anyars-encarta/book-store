@@ -1,0 +1,9 @@
+.category-container {
+  width: 75rem;
+  height: 10.625rem;
+  margin: 0 auto;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
