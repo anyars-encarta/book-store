@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import axios from 'axios';
+import { nanoid } from 'nanoid';
+
+import { addBook, fetchBooks } from '../redux/books/booksSlice';
+
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wErNE016NZo5TRPf1UV7/books';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -14,20 +19,32 @@ const AddBook = () => {
     });
   };
 
-  const handleAddBook = () => {
+  const handleAddBook = async () => {
     if (bookInfo.title && bookInfo.author && bookInfo.category) {
-      // Dispatch the addBook action with the bookInfo
-      dispatch(addBook(bookInfo));
+      // Generate a temporary 'item_id'
+      const tempItemId = nanoid();
 
-      // Clear the input fields
-      setBookInfo({ title: '', author: '', category: '' });
+      try {
+        const { title, author, category } = bookInfo;
+        const response = await axios.post(URL, {
+          item_id: tempItemId, title, author, category,
+        });
+        // Dispatch the addBook action with the bookInfo
+        dispatch(addBook(response.data));
+
+        // Clear the input fields
+        setBookInfo({ title: '', author: '', category: '' });
+        dispatch(fetchBooks());
+      } catch (error) {
+        throw new Error('Error adding book:', error.response ? error.response.data : error.message);
+      }
     }
   };
 
   return (
     <div className="Book-container">
       <h2>ADD NEW BOOK</h2>
-      <form>
+      <form onSubmit={(e) => e.preventDefault()}>
         <input
           id="title"
           name="title"

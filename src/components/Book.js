@@ -1,21 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBookAsync } from '../redux/books/booksSlice';
 
-const Book = ({ book, onRemoveClick }) => {
+const Book = ({ book }) => {
+  const dispatch = useDispatch();
+
   const handleRemoveClick = () => {
-    onRemoveClick(book.item_id);
+    // Dispatch the removeBookAsync action with the book's item_id
+    dispatch(removeBookAsync(book.item_id));
   };
 
   // Function to capitalize the first letter of a string
-  const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+  const capitalizeFirstLetter = (str) => {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  // Ensure that book properties are defined before accessing them
+  const category = book.category ? book.category : 'Unknown Category';
+  const title = book.title ? book.title : 'No Title';
+  const author = book.author ? book.author : 'Unknown Author';
 
   return (
     <div className="list-container">
       <ul className="list-block">
         <div className="left-section">
-          <li className="category">{capitalizeFirstLetter(book.category)}</li>
-          <li className="book-title">{book.title}</li>
-          <li className="book-author">{book.author}</li>
+          <li className="category">{capitalizeFirstLetter(category)}</li>
+          <li className="book-title">{title}</li>
+          <li className="book-author">{author}</li>
 
           <nav className="list-actions">
             <button type="button">Comments</button>
@@ -28,7 +41,9 @@ const Book = ({ book, onRemoveClick }) => {
           <div className="progess">
             <span className="progress-indicator">Progress Indicator</span>
             <span className="progress-percent">
-              20%
+              {/* Display '0%' if progress is missing */}
+              {book.progress || '0%'}
+              {' '}
             </span>
             <span className="progress-completed">Completed</span>
           </div>
@@ -36,7 +51,9 @@ const Book = ({ book, onRemoveClick }) => {
           <div className="chapter">
             <h4 className="current-chapter">CURRENT CHAPTER</h4>
             <h4 className="current-number">
-              CHAPTER 4: UMUOFIA
+              {/* Display 'No Chapter' if chapter is missing */}
+              {book.currentChapter || 'No Chapter'}
+              {' '}
             </h4>
             <button type="button" className="update-progress">UPDATE PROGRESS</button>
           </div>
@@ -48,14 +65,13 @@ const Book = ({ book, onRemoveClick }) => {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    // progress: PropTypes.string.isRequired,
-    // currentChapter: PropTypes.string.isRequired,
-    item_id: PropTypes.string.isRequired,
+    category: PropTypes.string,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    progress: PropTypes.string,
+    currentChapter: PropTypes.string,
+    item_id: PropTypes.string,
   }).isRequired,
-  onRemoveClick: PropTypes.func.isRequired,
 };
 
 export default Book;
