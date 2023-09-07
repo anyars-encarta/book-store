@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-
 import { addBook, fetchBooks } from '../redux/books/booksSlice';
+import '../styles/AddBook.css';
 
 const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wErNE016NZo5TRPf1UV7/books';
 
@@ -42,7 +42,8 @@ const AddBook = () => {
   };
 
   return (
-    <div className="Book-container">
+    <div className="book-container">
+      <hr />
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={(e) => e.preventDefault()}>
         <input

@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBookAsync } from '../redux/books/booksSlice';
+import '../styles/Book.css';
 
 const Book = ({ book }) => {
   const dispatch = useDispatch();
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (progress < 85) {
+        setProgress((prevProgress) => prevProgress + 1);
+      } else {
+        clearInterval(interval);
+      }
+    }, 20);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [progress]);
 
   const handleRemoveClick = () => {
     // Dispatch the removeBookAsync action with the book's item_id
@@ -32,25 +48,35 @@ const Book = ({ book }) => {
 
           <nav className="list-actions">
             <button type="button">Comments</button>
+            <span>|</span>
             <button type="button" onClick={handleRemoveClick}>Remove</button>
+            <span>|</span>
             <button type="button">Edit</button>
           </nav>
         </div>
 
         <div className="right-section">
-          <div className="progess">
-            <span className="progress-indicator">Progress Indicator</span>
-            <span className="progress-percent">
-              {/* Display '0%' if progress is missing */}
-              {book.progress || '0%'}
-              {' '}
-            </span>
-            <span className="progress-completed">Completed</span>
+          <div className="progess-container">
+            <div className="progress-sign">
+              <span className="title timer" data-from="0" data-to="85" data-speed="1800" />
+              <div className="overlay" />
+              <div className="left" />
+              <div className="right" />
+            </div>
+            <div className="progress">
+              <span className="progress-percent">
+                {/* Display '0%' if progress is missing */}
+                {/* {book.progress || '90%'}
+                {' '} */}
+                {progress}
+              </span>
+              <span className="progress-completed">Completed</span>
+            </div>
           </div>
-
+          <span className="div" />
           <div className="chapter">
             <h4 className="current-chapter">CURRENT CHAPTER</h4>
-            <h4 className="current-number">
+            <h4 className="chapter-number">
               {/* Display 'No Chapter' if chapter is missing */}
               {book.currentChapter || 'No Chapter'}
               {' '}
