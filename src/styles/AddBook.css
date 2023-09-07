@@ -63,6 +63,7 @@
 }
 
 .book-container button {
+  float: right;
   width: 8.5rem;
   height: 2.813rem;
   margin: 1.188rem 0 0 2.125rem;
