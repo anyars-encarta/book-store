@@ -27,10 +27,10 @@ body {
   background-image: url(../assets/user.png);
   background-size: cover;
   background-repeat: no-repeat;
-  border: 2px solid #fff;
-  -moz-box-shadow: 0 6px 5px #ccc;
+  border: 1px solid #e8e8e8;
+  /* -moz-box-shadow: 0 6px 5px #ccc;
   -webkit-box-shadow: 0 6px 5px #ccc;
-  box-shadow: 0 6px 5px #ccc;
+  box-shadow: 0 6px 5px #ccc; */
   -moz-border-radius: 190px;
   -webkit-border-radius: 190px;
   border-radius: 50%;

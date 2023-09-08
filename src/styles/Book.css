@@ -278,6 +278,7 @@
 .update-progress {
   width: 11.5rem;
   height: 2.063rem;
+  font-weight: 300;
   margin: 0.75rem 0 0.563rem 3.688rem;
   padding: 0.438rem 1.188rem 0.5rem 1.375rem;
   border-radius: 3px;
