@@ -70,11 +70,11 @@
 
 <!-- LIVE DEMO -->
 
-<!-- LIVE DEMO
+LIVE DEMO
 
-> Visit [live]( https://anyars-encarta.github.io/book-store/) page of my Profile
+> Visit [live](https://book-store-rx1w.onrender.com/) page of my Profile
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
