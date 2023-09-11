@@ -72,7 +72,7 @@
 
 LIVE DEMO
 
-> Visit [live](https://book-store-rx1w.onrender.com/) page of my Profile
+> Visit [live](https://book-store-n5fn.onrender.com/) page of my Profile
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
