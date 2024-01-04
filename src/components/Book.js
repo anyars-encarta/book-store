@@ -33,7 +33,7 @@ const Book = ({ book }) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  // Ensure that book properties are defined before accessing them, the book properties define how the books render on
+  // Ensure that book properties are defined before accessing them, the book properties define how the books render 
   const category = book.category ? book.category : 'Unknown Category';
   const title = book.title ? book.title : 'No Title';
   const author = book.author ? book.author : 'Unknown Author';
