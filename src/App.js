@@ -7,8 +7,10 @@ const App = () => (
   <>
     <Navbar />
     <Routes>
-      <Route path="/" element={<Books />} default />
+      <Route path="/books" element={<Books />} />
       <Route path="/categories" element={<Categories />} />
+      {/* Set books route as default */}
+      <Route path="/*" element={<Books />} />
     </Routes>
   </>
 );
