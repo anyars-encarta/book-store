@@ -1,9 +1,10 @@
 import React from 'react';
 import BookList from './BookList';
 import AddBook from './AddBook';
+import '../styles/Main.css';
 
 const Books = () => (
-  <div>
+  <div className="body-container">
     <BookList />
     <AddBook />
   </div>
