@@ -72,7 +72,7 @@
 
 LIVE DEMO
 
-> Visit [live](https://book-store-n5fn.onrender.com/) page of my Profile
+> Visit [live](https://anyars-encarta.github.io/book-store/) page of my Profile
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
