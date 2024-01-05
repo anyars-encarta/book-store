@@ -108,12 +108,12 @@
 
 @keyframes load3 {
   0% {
-    z-index: 100;
+    z-index: 98;
     transform: rotate(180deg);
   }
 
   100% {
-    z-index: 100;
+    z-index: 98;
     transform: rotate(315deg);
   }
 }
@@ -212,7 +212,7 @@
 }
 
 .book-title {
-  width: 15.313rem;
+  width: 16rem;
   height: 1.813rem;
   margin: 0.188rem 20.188rem 0 0;
   font-size: 1.375rem;
